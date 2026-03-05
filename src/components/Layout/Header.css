@@ -3,13 +3,12 @@
   top: 0;
   left: 0;
   right: 0;
-  background: rgba(250, 248, 245, 0.95);
+  background: rgba(253, 247, 241, 0.95);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--brand-sand);
   z-index: 1000;
   transition: var(--transition-lg);
-  /* Responsive header height */
-  --header-height: clamp(72px, 10vw, 128px);
+  /* Compact header height — MAJA-style */
+  --header-height: clamp(52px, 5vw, 64px);
 }
 
 /* Anchor absolute elements (like the burger) to the same box on all routes */
@@ -29,13 +28,13 @@
   z-index: auto;
 }
 
-/* Inner pages: look like hero nav (clean, translucent, no hard border) */
+/* Inner pages: sits at the top, scrolls with the page */
 .header.inner {
-  position: fixed;
-  background: rgba(250, 248, 245, 0.85);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--brand-sand);
-  box-shadow: var(--shadow-md);
+  position: relative;
+  background: var(--brand-bg);
+  backdrop-filter: none;
+  border-bottom: none;
+  box-shadow: none;
 }
 
 .header.home .header-content {
@@ -88,25 +87,21 @@
 
 .logo h1 {
   font-size: 1.8rem;
-  font-weight: 700;
-  color: #2c3e50;
+  font-weight: var(--font-regular);
+  color: var(--brand-text);
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: opacity 0.2s ease;
 }
 
 .logo:hover h1 {
-  color: #3498db;
+  opacity: 0.6;
 }
 
 /* When using the SVG wordmark logo */
 .logo-img {
   display: block;
-  height: clamp(24px, 4vw, 32px);
+  height: clamp(24px, 4vw, 42px);
   width: auto;
-}
-
-@media (min-width: 768px) {
-  .logo-img { height: clamp(40px, 5vw, 88px); }
 }
 
 .menu-toggle {
@@ -129,10 +124,10 @@
 
 .menu-toggle span {
   width: 25px;
-  height: 3px;
-  background: #2c3e50;
+  height: 1.5px;
+  background: var(--brand-text);
   transition: none; /* remove animation */
-  border-radius: 2px;
+  border-radius: 0;
 }
 
 /* Remove open-state transformations (no animation to X) */
@@ -143,16 +138,17 @@
   opacity: 1;
 }
 
+/* On home hero, burger should be white to show over dark image */
+.header.home .menu-toggle span {
+  background: #fff;
+}
+
 /* overlay menu styles moved to OverlayMenu.css */
 
 /* Mobile styles */
 @media (max-width: 768px) {
-  .header-content {
-    padding: 0.8rem 0;
-  }
-
   .logo h1 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 
   .menu-toggle {

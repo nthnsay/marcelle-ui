@@ -1,9 +1,9 @@
 :root {
-  --ink: #1e3d59;
-  --muted: #6b7b8c;
-  --accent: #1e64a3;
-  --card-border: #e5ebf0;
-  --card-shadow: rgba(0, 0, 0, 0.08);
+  --ink: #002147;
+  --muted: #404049;
+  --accent: #7E2D40;
+  --card-border: #EDDED1;
+  --card-shadow: rgba(0, 33, 71, 0.08);
 }
 
 .page-container.rental-page { display: grid; gap: 3rem; }
@@ -32,7 +32,7 @@
 }
 
 .rental-heading {
-  font-family: Georgia, 'Times New Roman', serif;
+  font-family: 'Libre Caslon Condensed', Georgia, serif;
   font-weight: 500;
   letter-spacing: 0.02em;
   font-size: clamp(2rem, 4.4vw, 3.2rem);

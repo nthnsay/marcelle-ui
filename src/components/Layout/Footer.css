@@ -3,13 +3,11 @@
    ============================================================ */
 
 .footer {
-  height: 75vh;
   background: var(--brand-bg);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   overflow: hidden;
-  position: relative;
+  min-height: auto;
 }
 
 .footer-snap {
@@ -19,18 +17,18 @@
 /* ── Nav columns ───────────────────────────────────────────── */
 .footer-nav {
   display: flex;
-  gap: var(--space-16);
-  padding: var(--space-6) var(--space-20) 0;
+  gap: clamp(2rem, 4.5vw, 5rem);
+  padding: clamp(1.5rem, 3vw, 2.5rem) clamp(2rem, 6vw, 6rem) 0;
   align-items: flex-start;
   justify-content: center;
 }
 
 .footer-col-title {
-  font-size: var(--font-sm);
-  font-weight: var(--font-semibold);
+  font-size: var(--font-xs);
+  font-weight: var(--font-regular);
   margin-bottom: var(--space-4);
   text-transform: uppercase;
-  letter-spacing: var(--tracking-wide);
+  letter-spacing: var(--tracking-wider);
   color: var(--brand-text);
 }
 
@@ -40,14 +38,14 @@
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
+  /* gap: var(--space-2); */
 }
 
 .footer-col-links a {
-  color: var(--brand-text);
+  color: var(--brand-muted);
   text-decoration: none;
   font-size: var(--font-sm);
-  transition: var(--transition-md);
+  transition: opacity 0.2s ease;
   font-family: inherit;
 }
 
@@ -55,42 +53,42 @@
   opacity: 0.5;
 }
 
-/* ── Oversized wordmark ────────────────────────────────────── */
+/* ── Oversized wordmark — bleeds off bottom edge ───────────── */
 .footer-wordmark {
-  position: relative;
-  height: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
+  padding: 0 clamp(2rem, 5vw, 5rem) clamp(0.5rem, 1vw, 1rem);
 }
 
 .footer-logo {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  transform: translateY(-18%);
+  display: block;
+  width: min(78vw, 960px);
+  height: auto;
 }
 
 /* ── Responsive ────────────────────────────────────────────── */
 @media (max-width: 900px) {
   .footer {
-    height: auto;
+    min-height: auto;
     scroll-snap-align: none;
     scroll-snap-stop: unset;
-    min-height: auto;
   }
 
   .footer-nav {
     flex-wrap: wrap;
     gap: 2rem;
-    padding: 3rem 1.5rem 2rem;
+    padding: 2.5rem 1.5rem 1rem;
+  }
+
+  .footer-wordmark {
+    padding: 0.5rem 1.5rem 2rem;
   }
 }
 
 @media (max-width: 560px) {
   .footer-nav {
-    padding: 2.5rem 1.25rem 1.5rem;
+    padding: 2rem 1.25rem 0;
     gap: 1.5rem;
   }
 }

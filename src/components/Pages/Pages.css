@@ -192,7 +192,22 @@
 }
 
 @media (max-width: 992px) {
-  .about-hero { min-height: var(--space-48); }
+  .about-hero { min-height: 320px; }
   .about-hero-title { font-size: var(--font-3xl); }
   .about-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 600px) {
+  .about-hero {
+    min-height: 260px;
+    border-radius: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .about-hero-content {
+    padding: var(--space-8) var(--space-6);
+  }
+  .about-hero-subtitle {
+    font-size: var(--font-sm);
+  }
 }

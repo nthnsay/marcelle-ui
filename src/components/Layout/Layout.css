@@ -6,27 +6,19 @@
 
 .main-content {
   flex: 1;
-  /* Account for fixed header height across breakpoints */
-  padding-top: clamp(72px, 10vw, 128px);
+  /* No padding-top needed — header is in normal document flow */
   /* Create spacing above the footer */
   margin-bottom: clamp(16px, 4vw, 40px);
 }
 
-/* On home route the header becomes the hero (not fixed) */
+/* On home route the hero is part of the header, no extra margin needed */
 .layout.home .main-content {
-  padding-top: 0;
   margin-bottom: 0;
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .main-content {
-    padding-top: clamp(64px, 12vw, 96px);
     margin-bottom: clamp(12px, 4vw, 28px);
-  }
-
-  .layout.home .main-content {
-    padding-top: 0;
-    margin-bottom: 0;
   }
 }

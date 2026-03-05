@@ -1,7 +1,7 @@
 :root {
-  --ink: #1e3d59;
-  --muted: #6b7b8c;
-  --accent: #1e64a3;
+  --ink: #002147;
+  --muted: #404049;
+  --accent: #7E2D40;
 }
 
 .page-container.schedule-page { display: grid; gap: 2.5rem; }
@@ -111,15 +111,15 @@
 }
 
 /* Title block */
-.hero-kicker { color: #6b7b8c; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.8rem; }
-.hero-title { color: #1e3d59; font-weight: 600; font-size: clamp(1.8rem, 4.6vw, 3.2rem); margin: 0.1rem 0 0.75rem; }
+.hero-kicker { color: #404049; text-transform: uppercase; letter-spacing: 0.08em; font-size: 0.8rem; }
+.hero-title { color: #002147; font-weight: 600; font-size: clamp(1.8rem, 4.6vw, 3.2rem); margin: 0.1rem 0 0.75rem; }
 
 /* 3-column weekly grid with generous spacing */
 .week-grid { grid-template-columns: repeat(3, 1fr); column-gap: clamp(20px, 4vw, 48px); row-gap: 1.5rem; }
-.day-heading { color: #1e3d59; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.9; margin-bottom: 0.25rem; }
+.day-heading { color: #002147; font-size: 0.85rem; letter-spacing: 0.06em; text-transform: uppercase; opacity: 0.9; margin-bottom: 0.25rem; }
 .day-list { gap: 0.3rem; }
-.day-item { grid-template-columns: 56px 1fr; gap: 0.35rem; color: #6b7b8c; }
-.slot-time { color: #1e3d59; font-weight: 700; font-size: 0.85rem; }
+.day-item { grid-template-columns: 56px 1fr; gap: 0.35rem; color: #404049; }
+.slot-time { color: #002147; font-weight: 700; font-size: 0.85rem; }
 .slot-name { font-size: 0.9rem; }
 
 /* CTA button under grid */
@@ -187,8 +187,8 @@
 }
 /* Schedule polish: serif-like heading, stronger image frame, tighter day columns */
 .hero-title {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-weight: 500;
+  font-family: 'Libre Caslon Condensed', Georgia, serif;
+  font-weight: 400;
   letter-spacing: 0.01em;
   font-size: clamp(2rem, 4.8vw, 3.4rem);
 }
@@ -214,3 +214,26 @@
 }
 /* Add top margin to main schedule content */
 .schedule-main { margin-top: clamp(12px, 3vw, 24px); }
+
+/* ── Definitive mobile overrides (must come last to win over bare rules above) ── */
+@media (max-width: 900px) {
+  .schedule-main {
+    grid-template-columns: 1fr;
+  }
+  .schedule-left { order: 1; padding-right: 0; }
+  .schedule-media { order: 2; aspect-ratio: 4 / 3; height: auto; }
+}
+
+@media (max-width: 700px) {
+  .week-grid {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+  }
+  .slot-name {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: clip;
+    font-size: 0.85rem;
+  }
+  .day-item { grid-template-columns: 52px 1fr; }
+}

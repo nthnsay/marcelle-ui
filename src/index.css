@@ -5,7 +5,7 @@
 }
 
 html {
-  scroll-snap-type: y proximity;
+  scroll-snap-type: y mandatory;
   scroll-behavior: smooth;
 }
 
@@ -16,19 +16,21 @@ html {
 }
 
 body {
-  /* Brand tokens from guideline */
-  font-family: 'Cormorant Garamond', serif;
+  /* Brand tokens — Marcelle Studios brand guide */
+  font-family: 'DM Sans', sans-serif;
   font-size: clamp(14px, 1.2vw, 18px);
   line-height: 1.6;
-  
+
   /* Color palette */
-  --brand-bg: #faf8f5;              /* Main background - warm cream */
-  --brand-beige: #f5f0eb;            /* Secondary background - soft beige */
-  --brand-sand: #ede6de;              /* Accent background - warm sand */
-  --brand-stone: #d4ccc7;            /* Light accent - stone gray */
-  --brand-text: #2a2520;             /* Primary text - warm charcoal */
-  --brand-muted: #6b5d54;            /* Secondary text - muted brown */
-  --brand-accent: #8b7355;            /* Accent color - warm brown */
+  --brand-bg: #FDF7F1;              /* Warm white */
+  --brand-beige: #EDDED1;            /* Almond */
+  --brand-sand: #ddd0c4;              /* Mid-tone warm sand */
+  --brand-stone: #c8bdb5;            /* Light stone */
+  --brand-text: #002147;             /* Oxford Blue — primary text */
+  --brand-muted: #404049;            /* Dark grey — secondary text */
+  --brand-accent: #7E2D40;            /* Puce Red — accent/CTA */
+  --brand-temptress: #352127;        /* Temptress — deep accent */
+  --brand-near-black: #151516;       /* Near black */
   
   /* Typography scale - responsive */
   --font-xs: clamp(0.625rem, 0.8vw, 0.75rem);     /* 10-12px - Small caps, labels */
@@ -80,10 +82,10 @@ body {
   --radius-full: 9999px;
   
   /* Shadows */
-  --shadow-sm: 0 1px 3px rgba(42, 37, 32, 0.04);
-  --shadow-md: 0 2px 8px rgba(42, 37, 32, 0.06);
-  --shadow-lg: 0 4px 16px rgba(42, 37, 32, 0.08);
-  --shadow-xl: 0 8px 32px rgba(42, 37, 32, 0.12);
+  --shadow-sm: 0 1px 3px rgba(0, 33, 71, 0.04);
+  --shadow-md: 0 2px 8px rgba(0, 33, 71, 0.06);
+  --shadow-lg: 0 4px 16px rgba(0, 33, 71, 0.08);
+  --shadow-xl: 0 8px 32px rgba(0, 33, 71, 0.12);
   
   /* Component tokens */
   --button-padding-y: var(--space-3);
@@ -91,7 +93,7 @@ body {
   --card-padding: var(--space-6);
   --input-padding: var(--space-3);
 
-  font-family: 'Cormorant Garamond', 'Garamond', 'Georgia', 'Times New Roman', serif;
+  font-family: 'DM Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.6;
