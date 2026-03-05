@@ -1,0 +1,109 @@
+:root {
+  --ink: #1e3d59;
+  --muted: #6b7b8c;
+  --accent: #1e64a3;
+}
+
+.page-container.events-page {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* Hero */
+.events-hero {
+  text-align: left;
+  padding-block: clamp(16px, 4vw, 32px);
+}
+
+.events-heading {
+  font-size: clamp(1.6rem, 3.6vw, 2.4rem);
+  color: var(--ink);
+  margin: 0 0 0.25rem 0;
+}
+
+.events-subheading {
+  color: var(--muted);
+  max-width: 60ch;
+  margin: 0;
+}
+
+/* Events list */
+.events-list {
+  display: grid;
+  gap: 2rem;
+}
+
+.event-item {
+  display: grid;
+  grid-template-columns: min(46%, 560px) 1fr;
+  align-items: center;
+  gap: clamp(16px, 4vw, 32px);
+}
+
+.event-media.placeholder {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 14px;
+  background: #e8eef2;
+}
+
+.event-content {
+  display: grid;
+  align-content: start;
+  gap: 0.5rem;
+}
+
+.event-kicker {
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.event-title {
+  color: var(--ink);
+  font-size: clamp(1.4rem, 3.2vw, 2rem);
+  margin: 0;
+}
+
+.event-description {
+  color: var(--muted);
+  margin: 0;
+}
+
+.event-actions { display: flex; gap: 0.75rem; }
+.btn { padding: 0.6rem 1rem; border-radius: 8px; border: 1px solid transparent; font-weight: 600; cursor: pointer; }
+.btn-secondary { background: #fff; color: var(--accent); border-color: var(--accent); }
+
+/* Moves section */
+.moves-section { display: grid; gap: 1rem; }
+.moves-heading { color: var(--ink); font-size: clamp(1.25rem, 2.6vw, 1.8rem); }
+.moves-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+.move-style {
+  border: 1px solid #e5ebf0;
+  border-radius: 12px;
+  padding: 1rem;
+}
+.move-title { margin-top: 0; color: var(--ink); }
+.move-text { color: var(--muted); }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .event-item { grid-template-columns: 1fr; }
+  .moves-grid { grid-template-columns: 1fr; }
+}
+/* Center Events page header */
+.events-heading { text-align: center; }
+/* Center Events subheading */
+.events-subheading {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Improve readability for subheading */
+.events-subheading {
+  max-width: 60ch;
+  margin-top: 0.25rem;
+}

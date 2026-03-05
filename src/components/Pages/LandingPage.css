@@ -1,0 +1,347 @@
+/* ============================================================
+   Landing Page — MAJA-inspired editorial aesthetic
+   Full-viewport scroll-snap panels · warm cream · serif type
+   ============================================================ */
+
+/* ── Landing wrapper ───────────────────────────────────────── */
+.landing {
+  background: var(--brand-bg);
+  margin-bottom: 0 !important;
+}
+
+/* ── Shared snap-section base ──────────────────────────────── */
+.feature-panel,
+.snap-section {
+  scroll-snap-align: start;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: var(--space-12);
+  background: var(--brand-bg);
+}
+
+/* Alternate panel background — every 2nd panel */
+.feature-panel:nth-child(even) {
+  background: var(--brand-beige);
+}
+
+/* ── Feature panel: MAJA layout ───────────────────────────── */
+.feature-panel {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  background: var(--brand-bg);
+}
+
+/* Create stacking context for absolute positioning */
+.feature-panel > div {
+  position: relative;
+}
+
+/* Text vertically centered, left side */
+.feature-panel-text {
+  position: absolute;
+  top: 50%;
+  right: var(--space-8);
+  transform: translateY(-50%);
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+  width: clamp(200px, 25vw, 320px);
+  padding: 0;
+  background: transparent;
+  text-align: left;
+}
+
+/* Image: contained rectangle, positioned based on media class */
+.feature-panel-media {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32vw;
+  height: 52vh;
+  border-radius: var(--radius-lg);
+  border: 3px solid var(--brand-sand);
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* media-left: image on left, text on right */
+.feature-panel.media-left .feature-panel-media {
+  left: 0;
+  right: auto;
+}
+
+/* media-right: image on left, text on right */
+.feature-panel.media-right .feature-panel-media {
+  left: 0;
+  right: auto;
+}
+
+/* media-left: image on left, text pushed to right */
+.feature-panel.media-left .feature-panel-text {
+  margin-left: auto;
+  margin-right: var(--space-12);
+}
+
+/* media-right: image on left, text on right */
+.feature-panel.media-right .feature-panel-text {
+  margin-right: auto;
+  margin-left: clamp(20rem, 35vw, 50rem);
+}
+
+.feature-media {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.feature-index {
+  font-size: var(--font-xs);
+  font-weight: var(--font-regular);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+  color: var(--brand-muted);
+  line-height: 1;
+}
+
+.feature-title {
+  font-size: var(--font-4xl);
+  font-weight: var(--font-regular);
+  color: var(--brand-text);
+  line-height: var(--leading-tight);
+  margin: 0;
+}
+
+.feature-blurb {
+  font-size: var(--font-base);
+  color: var(--brand-muted);
+  line-height: var(--leading-normal);
+  max-width: 34ch;
+}
+
+.link-btn {
+  display: inline-flex;
+  align-self: flex-start;
+  padding: var(--button-padding-y) var(--button-padding-x);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--brand-text);
+  color: var(--brand-text);
+  background: transparent;
+  font-weight: var(--font-regular);
+  font-family: inherit;
+  letter-spacing: var(--tracking-wide);
+  font-size: var(--font-xs);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition-md);
+}
+
+/* ── Studio banner ─────────────────────────────────────────── */
+.studio-banner {
+  position: relative;
+}
+
+.studio-banner .studio-media.placeholder {
+  width: 100%;
+  height: 100%;
+  background-color: var(--brand-sand);
+  background-image: url('../../assets/images/Landing/LandingLarge.jpg');
+  background-size: cover;
+  background-position: center 30%;
+  background-repeat: no-repeat;
+}
+
+.studio-label { display: none; }
+
+/* ── Gallery + CTA ─────────────────────────────────────────── */
+.gallery-cta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.gallery-cta .cta {
+  order: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--space-20) var(--space-16);
+  background: var(--brand-beige);
+  gap: var(--space-5);
+  text-align: left;
+}
+
+.gallery-cta .gallery {
+  order: 2;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  height: 100%;
+}
+
+.tile {
+  background-color: var(--brand-sand);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.tile.tall { grid-row: span 2; }
+.tile.placeholder { background-color: var(--brand-sand); }
+
+.gallery .tile:nth-child(3) { display: none; }
+
+.gallery .tile:nth-child(1) {
+  background-image: url('../../assets/images/Landing/landing1.png');
+}
+
+.gallery .tile:nth-child(2) {
+  background-image: url('../../assets/images/Landing/landing2.png');
+}
+
+/* ── CTA text ──────────────────────────────────────────────── */
+.cta-heading {
+  font-size: var(--font-4xl);
+  font-weight: var(--font-regular);
+  letter-spacing: var(--tracking-tight);
+  color: var(--brand-text);
+  line-height: var(--leading-tight);
+}
+
+.cta-blurb {
+  font-size: var(--font-base);
+  font-weight: var(--font-regular);
+  color: var(--brand-muted);
+  line-height: var(--leading-normal);
+  margin-bottom: var(--space-6);
+}
+
+.cta-actions {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.btn {
+  padding: var(--button-padding-y) var(--button-padding-x);
+  border-radius: var(--radius-full);
+  border: 1px solid var(--brand-text);
+  color: var(--brand-text);
+  background: transparent;
+  font-weight: var(--font-regular);
+  font-family: inherit;
+  letter-spacing: var(--tracking-wide);
+  font-size: var(--font-xs);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: var(--transition-md);
+}
+
+.btn-primary {
+  background: var(--brand-text);
+  color: var(--brand-bg);
+  border-color: var(--brand-text);
+}
+
+.btn-primary:hover {
+  background: transparent;
+  color: var(--brand-text);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--brand-text);
+  border-color: var(--brand-text);
+}
+
+.btn-secondary:hover {
+  background: var(--brand-text);
+  color: var(--brand-bg);
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .landing {
+    height: auto;
+    overflow-y: auto;
+    scroll-snap-type: none;
+  }
+
+  .feature-panel:nth-child(5) {
+    scroll-snap-align: none;
+    scroll-snap-stop: unset;
+  }
+
+  .feature-panel {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 3rem 1.5rem 2.5rem;
+    min-height: auto;
+    gap: 2rem;
+  }
+
+  .feature-panel.media-right .feature-panel-media {
+    left: auto;
+    right: auto;
+    position: relative;
+    top: auto;
+    transform: none;
+  }
+
+  .feature-panel-media {
+    position: relative;
+    top: auto;
+    right: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
+    height: 56vw;
+    min-height: 200px;
+  }
+
+  .feature-panel.media-right .feature-panel-text {
+    margin-left: 0;
+  }
+
+  .feature-panel-text {
+    width: 100%;
+    padding-bottom: 0;
+  }
+
+  .gallery-cta {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .gallery-cta .cta { order: 2; }
+  .gallery-cta .gallery {
+    order: 1;
+    min-height: 280px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr 1fr;
+    height: 280px;
+  }
+}
+
+@media (max-width: 560px) {
+  .feature-panel-text {
+    padding: 2rem 1.5rem;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+}
+

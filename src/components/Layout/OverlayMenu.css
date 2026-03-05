@@ -1,0 +1,76 @@
+.drawer {
+  /* Fullscreen overlay */
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 33, 71, 0.35);
+  z-index: 2000; /* ensure above any page/hero content */
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+}
+
+.drawer.open { opacity: 1; visibility: visible; pointer-events: auto; }
+
+/* Wireframe layout */
+.drawer-content {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: clamp(16px, 3vw, 32px);
+  height: 100%;
+  width: 100%;
+  margin: 0;              /* remove outer gaps */
+  padding: clamp(12px, 2vw, 20px); /* inner breathing space only */
+  background: #EDDED1;
+  border-radius: 0;       /* flush edges */
+  box-shadow: none;       /* no outer shadow since it fills the screen */
+  position: relative;     /* allow absolute close button */
+  text-align: left;       /* left-align content */
+}
+
+/* Close (X) button in the top-right of the panel */
+.drawer-close {
+  position: absolute;
+  top: clamp(6px, 1.5vw, 12px);
+  right: clamp(6px, 1.5vw, 12px);
+  background: transparent;
+  border: none;
+  font-size: clamp(14px, 2vw, 18px); /* smaller X size */
+  line-height: 1;
+  cursor: pointer;
+  color: var(--brand-text, #2c3e50);
+}
+
+.drawer-close:hover { color: #7E2D40; }
+
+.drawer-col.left {
+  align-self: start;
+  text-align: left;
+  /* Larger, responsive left inset for text */
+  padding-left: clamp(16px, 6vw, 72px);
+}
+.drawer-title { font-size: clamp(2rem, 5vw, 4rem); color: #002147; font-weight: 700; margin-bottom: 0.5rem; }
+
+.drawer-links { list-style: none; padding: 0; margin: 0; display: grid; gap: 0.5rem; }
+.drawer-links a { color: #002147; text-decoration: none; font-weight: 600; }
+.drawer-links a:hover, .drawer-links a.active { color: #7E2D40; }
+
+.drawer-image {
+  display: block;
+  border-radius: var(--radius, 12px);
+  background: #EDDED1;
+  min-height: clamp(220px, 40vh, 520px);
+}
+
+.drawer-nav .nav-item { border-bottom: 1px solid rgba(0,0,0,0.06); }
+
+.drawer-nav .nav-link {
+  display: block;
+  padding: 1rem 1.25rem;
+  color: #002147;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.drawer-nav .nav-link:hover { background: rgba(126, 45, 64, 0.08); color: #7E2D40; }
+.drawer-nav .nav-link.active { color: #7E2D40; }

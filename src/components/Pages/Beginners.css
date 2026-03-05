@@ -1,0 +1,207 @@
+:root {
+  --ink: #1e3d59;
+  --muted: #6b7b8c;
+  --accent: #1e64a3;
+  --card-border: #e5ebf0;
+  --card-shadow: rgba(0, 0, 0, 0.06);
+}
+
+.page-container.beginners-page {
+  display: grid;
+  gap: 3.5rem;
+}
+
+.beginners-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  gap: 3rem;
+  align-items: center;
+}
+
+.beg-hero-copy {
+  max-width: 40rem;
+}
+
+.beg-kicker {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  margin: 0 0 0.25rem;
+  color: var(--muted);
+}
+
+.beg-heading {
+  font-family: Georgia, 'Times New Roman', serif;
+  color: var(--ink);
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  margin: 0 0 0.75rem;
+}
+
+.beg-intro,
+.beg-intro-secondary {
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+.beg-intro-secondary {
+  margin-top: 0.75rem;
+}
+
+.beg-hero-media {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  margin-left: auto;
+}
+
+.hero-image {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 14px 30px var(--card-shadow);
+}
+
+.hero-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.hero-image-main {
+  transform: translateX(0);
+}
+
+.hero-image-overlay {
+  position: absolute;
+  right: -12%;
+  bottom: -12%;
+  width: 60%;
+}
+
+/* Content grid */
+.beg-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.75rem 1.5rem;
+}
+
+.beg-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 10px 28px var(--card-shadow);
+  overflow: hidden;
+}
+
+.beg-card-media img {
+  display: block;
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.beg-card-body {
+  padding: 1.1rem 1.25rem 1.3rem;
+}
+
+.beg-title {
+  margin: 0 0 0.55rem;
+  color: var(--ink);
+  font-size: 1.05rem;
+}
+
+.beg-card-body p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Meet Your Reformer section (styled like Schedule hero) */
+.beg-reformer-section {
+  display: grid;
+  grid-template-columns: min(44%, 420px) 1.3fr;
+  gap: clamp(20px, 4vw, 36px);
+  align-items: start;
+}
+
+.beg-reformer-media img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 10px 28px var(--card-shadow);
+  display: block;
+}
+
+.beg-reformer-copy {
+  display: grid;
+  align-content: start;
+  gap: 0.6rem;
+}
+
+.beg-reformer-intro,
+.beg-reformer-outro {
+  margin: 0;
+}
+
+.beg-reformer-list {
+  list-style: none;
+  margin: 0.25rem 0 0.6rem;
+  padding: 0;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.beg-reformer-row {
+  display: grid;
+  grid-template-columns: minmax(120px, 150px) 1fr;
+  column-gap: 0.6rem;
+  color: var(--muted);
+}
+
+.reformer-part-name {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.reformer-part-desc {
+  font-size: 0.9rem;
+}
+
+@media (max-width: 900px) {
+  .beg-reformer-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .beginners-hero {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .beg-hero-media {
+    max-width: 360px;
+    margin: 0 auto;
+  }
+
+  .hero-image-overlay {
+    right: -4%;
+    bottom: -8%;
+  }
+
+  .beg-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .beg-grid {
+    grid-template-columns: 1fr;
+  }
+}

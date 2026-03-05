@@ -1,0 +1,96 @@
+/* ============================================================
+   Footer — MAJA-inspired: nav columns + oversized wordmark
+   ============================================================ */
+
+.footer {
+  height: 75vh;
+  background: var(--brand-bg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  position: relative;
+}
+
+.footer-snap {
+  scroll-snap-align: start;
+}
+
+/* ── Nav columns ───────────────────────────────────────────── */
+.footer-nav {
+  display: flex;
+  gap: var(--space-16);
+  padding: var(--space-6) var(--space-20) 0;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.footer-col-title {
+  font-size: var(--font-sm);
+  font-weight: var(--font-semibold);
+  margin-bottom: var(--space-4);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  color: var(--brand-text);
+}
+
+.footer-col-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.footer-col-links a {
+  color: var(--brand-text);
+  text-decoration: none;
+  font-size: var(--font-sm);
+  transition: var(--transition-md);
+  font-family: inherit;
+}
+
+.footer-col-links a:hover {
+  opacity: 0.5;
+}
+
+/* ── Oversized wordmark ────────────────────────────────────── */
+.footer-wordmark {
+  position: relative;
+  height: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.footer-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transform: translateY(-18%);
+}
+
+/* ── Responsive ────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .footer {
+    height: auto;
+    scroll-snap-align: none;
+    scroll-snap-stop: unset;
+    min-height: auto;
+  }
+
+  .footer-nav {
+    flex-wrap: wrap;
+    gap: 2rem;
+    padding: 3rem 1.5rem 2rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .footer-nav {
+    padding: 2.5rem 1.25rem 1.5rem;
+    gap: 1.5rem;
+  }
+}
