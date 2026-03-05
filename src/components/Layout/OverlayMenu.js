@@ -18,7 +18,7 @@ const OverlayMenu = ({ isOpen, onClose }) => {
       <div className="drawer-content" onClick={(e) => e.stopPropagation()}>
         <button className="drawer-close" aria-label="Close menu" onClick={onClose}>×</button>
         <div className="drawer-col left">
-          <h2 className="drawer-title">Studio</h2>
+          <h2 className="drawer-title">Our Studio</h2>
           <nav className="drawer-nav" aria-label="Studio">
             <ul className="drawer-links">
               <li>
