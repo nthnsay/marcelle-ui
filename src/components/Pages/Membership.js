@@ -1,7 +1,6 @@
 import React from 'react';
 import './Membership.css';
 import rowImage from '../../assets/images/Landing/landing1.png';
-import heroPushup from '../../assets/images/gallery/pushup.png';
 
 const memberships = [
   {

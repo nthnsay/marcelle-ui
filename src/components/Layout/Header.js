@@ -13,11 +13,7 @@ const Header = () => {
 
   const closeMenu = () => setIsMenuOpen(false);
 
-  const isActive = (path) => {
-    return location.pathname === path;
-  };
-
-  // Close on Esc and lock body scroll while open
+// Close on Esc and lock body scroll while open
   useEffect(() => {
     const onKeyDown = (e) => {
       if (e.key === 'Escape') closeMenu();

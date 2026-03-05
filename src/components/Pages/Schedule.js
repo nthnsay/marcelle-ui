@@ -84,8 +84,8 @@ const Schedule = () => {
             <p className="cta-eyebrow">Make your future bookings</p>
             <h2 className="cta-heading">easier</h2>
             <div className="cta-links">
-              <a className="store-link" href="#" aria-label="App Store link (mock)">App Store</a>
-              <a className="store-link" href="#" aria-label="Google Play link (mock)">Google Play</a>
+              <button className="store-link" aria-label="App Store link (mock)">App Store</button>
+              <button className="store-link" aria-label="Google Play link (mock)">Google Play</button>
             </div>
           </div>
         </div>
